@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --clr-black: #121212;
+    --clr-drk-blue: #19202D;
+    --clr-white: #FFF;
+
+    --clr-grey-100: #E7EAee;
+    --clr-grey-200: #CFCFCF;
+    --clr-grey-400: #676D7E;
+    --clr-grey-500: #48556A;
+
+    --clr-purple-50: #EDE4FF;
+    --clr-purple-300: #A775F1;
+    --clr-purple-500: #733FC8;
+
+    --fs-large: 1.25rem;
+    --fs-body: 0.813rem;
+    --fs-small: 0.688rem;
+}
+
+@layer  reset{
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+		background-repeat: no-repeat;
+	}
+
+	* {
+		padding: 0;
+		margin: 0;
+	}
+
+	html {
+		-webkit-text-size-adjust: none;
+		text-size-adjust: none;
+		line-height: 1.5;
+		-webkit-font-smoothing: antialiased;
+        block-size: 100%;
+	}
+
+	body {
+		min-block-size: 100%;
+	}
+
+	img,
+	iframe,
+	audio,
+	video,
+	canvas {
+		display: block;
+		max-inline-size: 100%;
+		block-size: auto;
+	}
+
+	svg {
+		max-inline-size: 100%;
+	}
+
+	svg:not([fill]) {
+		fill: currentColor;
+	}
+
+	input,
+	button,
+	textarea,
+	select {
+		font: inherit;
+	}
+
+	textarea {
+		resize: vertical;
+	}
+
+	fieldset,
+	iframe {
+		border: none;
+	}
+
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		overflow-wrap: break-word;
+	}
+
+	p {
+		text-wrap: pretty;
+		font-variant-numeric: proportional-nums;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-variant-numeric: lining-nums;
+	}
+
+	p,
+    blockquote,
+    q,
+    figcaption,
+    li {
+        hanging-punctuation: first allow-end last;
+    }
+
+	input,
+	label,
+	button,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+        line-height: 1.1;
+    }
+
+	math,
+	time,
+	table {
+		font-variant-numeric: tabular-nums lining-nums slashed-zero;
+	}
+
+	code {
+		font-variant-numeric: slashed-zero;
+	}
+
+	table {
+		border-collapse: collapse;
+	}
+
+	abbr {
+		font-variant-caps: all-small-caps;
+		text-decoration: none;
+
+		&[title] {
+			cursor: help;
+			text-decoration: underline dotted;
+		}
+	}
+
+	sup,
+	sub {
+		line-height: 0;
+	}
+
+	:disabled {
+		opacity: 0.8;
+		cursor: not-allowed;
+	}
+
+	:focus-visible {
+		outline-offset: 0.2rem;
+	}
+}
+
+body{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--clr-grey-100);
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.testimonials-container{
+    max-width: 1114px;
+}
+
+.testimonial-cards-grid{
+    display: grid;
+    gap: 2rem;
+}
+
+.card-heading-container{
+    display: flex;
+    /* max-width: 76px; */
+    align-items: center;
+    gap: 1rem;
+}
+
+.card-heading{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+}
+
+.card-heading h1{
+    font-size: var(--fs-body);
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%;
+}
+
+
+
+.card-heading h2{
+    font-size: var(--fs-small);
+    font-weight: 500;
+    line-height: 110%;
+}
+
+.card-img{
+    max-height: 28px;
+    max-width: 28px;
+    border-radius: 28px;
+}
+
+.testimonial-card{
+    display: flex;
+    flex-direction: column;
+	gap: 1rem;
+	padding: 2rem;
+	border-radius: .5rem;
+	box-shadow: 40px 60px 50px -47px rgba(72, 85, 106, 0.25);
+}
+
+.purple-bg{
+	background-color: var(--clr-purple-500);
+	color: var(--clr-white);
+}
+
+.gray-bg{
+	background-color: var(--clr-grey-500);
+	color: var(--clr-white);
+
+}
+
+.light-bg{
+	background-color: #FFF;
+}
+
+.dark-bg{
+	background-color: var(--clr-drk-blue);
+	color: var(--clr-grey-200);
+}
+
+p{
+	font-size: var(--fs-large);
+}
+
+p+p{
+	font-size: var(--fs-body);
+}
+
+
+
+
+/* Grid Layout */
+
+.testimonial-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto;
+  gap: 2rem;
+
+  grid-template-areas:
+    "card1 card1 card2 card3"
+    "card4 card5 card5 card3";
+
+}
+
+.purple-bg{
+	grid-area: card1;
+}
+
+.gray-bg{
+	grid-area: card2;
+}
+
+.dark-bg{
+	grid-area: card5;
+}
+
+.light-bg-long{
+	grid-area: card3;
+}
+
+.light-bg-small{
+	grid-area: card4;
+}

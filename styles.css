@@ -226,6 +226,12 @@ body{
 .purple-bg{
 	background-color: var(--clr-purple-500);
 	color: var(--clr-white);
+	background-image: url("/images/bg-pattern-quotation.svg");
+	background-repeat: no-repeat;
+	background-position: 
+	top 0 right 10%;
+	
+
 }
 
 .gray-bg{
@@ -245,10 +251,14 @@ body{
 
 p{
 	font-size: var(--fs-large);
+	font-weight: 600;
+	line-height: 120%;
 }
 
 p+p{
 	font-size: var(--fs-body);
+	font-weight: 500;
+	line-height: 140%;
 }
 
 
@@ -286,4 +296,47 @@ p+p{
 
 .light-bg-small{
 	grid-area: card4;
+}
+
+
+@media (max-width: 980px) {
+ 
+.testimonial-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+  gap: 2rem;
+	margin: 0 auto;
+padding: 1.5rem;	
+
+  grid-template-areas:
+    "card1 card1"
+	"card2 card4"
+	"card3 card3"
+	"card5 card5"
+
+}
+
+}
+
+@media (max-width: 565px) {
+ 
+.testimonial-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+  gap: 2rem;
+	margin: 0 auto;
+padding: 1.5rem;
+min-width: 375px;	
+
+  grid-template-areas:
+    "card1 card1"
+	"card2 card2"
+	"card5 card5"
+	"card4 card4"
+	"card3 card3"
+
+}
+
 }

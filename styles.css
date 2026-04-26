@@ -259,6 +259,7 @@ p+p{
 	font-size: var(--fs-body);
 	font-weight: 500;
 	line-height: 140%;
+	font-style: normal;
 }
 
 
